@@ -1,0 +1,7 @@
+types LOTR_OCR_preload {
+    type lotr_ocr_mod_changes = text_multi {
+		autoresize = yes
+		text = "ocr_tc_submod_changes"
+		max_width = 900
+	}
+}

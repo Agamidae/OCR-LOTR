@@ -1,0 +1,23 @@
+textformatting = {
+  ### LotR formats ###
+  format = {
+    name = tengwar
+    format = "color_white"
+  }
+  format = {
+    name = cirith
+    format = "color_white"
+  }
+  format = {
+    name = angerthas
+    format = "color_white"
+  }
+  format = {
+    name = TolkienQuote
+    format = "color_white"
+  }
+  format = {
+    name = QuotedCharacter
+    format = "color_white"
+  }
+}

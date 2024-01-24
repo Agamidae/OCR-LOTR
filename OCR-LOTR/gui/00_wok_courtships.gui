@@ -1,0 +1,90 @@
+types OCR {
+  type vbox_wok_intrigue_arranged_courtships = vbox {
+    layoutpolicy_horizontal = expanding
+    margin_top = 10
+
+    hbox = {
+      layoutpolicy_horizontal = expanding
+      spacing = 3
+
+      text_single = {
+        raw_text = "[GetDataModelSize(GetPlayer.MakeScope.GetList('arranged_courtships'))]"
+      }
+
+      text_single = {
+        text = "SCHEME_WINDOW_ARRANGED_COURTSHIPS"
+      }
+
+      dot_l = {}
+
+      expand = {}
+    }
+
+
+    vbox = {
+      name = "known_schemes_grid"
+      datamodel = "[GetPlayer.MakeScope.GetList('arranged_courtships')]"
+      layoutpolicy_horizontal = expanding
+
+      item = {
+        vbox_own_scheme_item = {
+          layoutpolicy_horizontal = expanding
+          blockoverride "datacontext" {
+            datacontext = "[Scope.GetScheme]"
+          }
+          blockoverride "members" {
+            visible = no
+          }
+          blockoverride "cancel_scheme" {
+            visible = no
+          }
+        }
+      }
+    }
+
+    hbox = {
+      layoutpolicy_horizontal = expanding
+
+
+      text_multi_wide = {
+        name = "no_own_schemes"
+        visible = "[Not(DataModelHasItems(GetPlayer.MakeScope.GetList('arranged_courtships')))]"
+
+        text = "SCHEME_WINDOW_NO_ARRANGED_COURTSHIPS"
+
+      }
+
+      expand = {}
+    }
+
+  }
+
+  type flow_wok_courtships_hud = flowcontainer {
+    datamodel = "[GetPlayer.MakeScope.GetList('arranged_courtships')]"
+    direction = vertical
+
+    item = {
+      button_text = {
+        datacontext = "[Scope.Scheme]"
+        onclick = "[ToggleGameViewData('intrigue_window', GetPlayer.GetID)]"
+        blockoverride "text" {
+          raw_text = "[Scheme.GetSchemeType.GetTypeNameNoTooltip] [Scheme.GetTarget.GetFirstNameNoTooltip] [Scheme.GetProgressBar|%0],"
+        }
+        blockoverride "extra" {
+          text_single = {
+            raw_text = "[Scheme.GetTarget.GetOpinionOf(GetPlayer)|=] opinion,"
+            tooltip = "[Scheme.GetTarget.GetOpinionBreakdownText(GetPlayer)]"
+            visible = "[Not(Scheme.GetSchemeType.IsHostile)]"
+          }
+          text_single = {
+            raw_text = "Chance [Scheme.GetSuccessChance]%,"
+          }
+          text_single = {
+            raw_text = "[Scheme.GetEstimatedTimeRemaining]."
+          }
+        }
+        # tooltip = "BOTTOMBAR_SCHEME_TOOLTIP"
+      }
+    }
+  }
+}

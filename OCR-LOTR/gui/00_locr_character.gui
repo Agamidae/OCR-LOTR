@@ -1,0 +1,199 @@
+types OCR {
+  type button_tribs_locr = button_text {
+    datacontext = "[CharacterWindow.GetCharacter]"
+    visible = "[Not(IsDataModelEmpty(Character.MakeScope.GetList('all_tributaries')))]"
+    layoutpolicy_horizontal = expanding
+
+    onclick = "[GetVariableSystem.Set('char_tab','tributaries')]"
+    down = "[GetVariableSystem.HasValue('char_tab','tributaries')]"
+    block "shortcut" {
+      shortcut = speed_5
+    }
+
+    blockoverride "extra" {
+      block "tab" {
+        text_single = {
+          raw_text = "Tab 5,"
+        }
+      }
+
+      text_single = {
+        text = "CV_TAB_TRIBS"
+      }
+
+      text_single = {
+        text = "[GetDataModelSize(Character.MakeScope.GetList('all_tributaries'))]"
+      }
+
+      dot_l = {}
+    }
+  }
+
+  type widget_tribs_list_item_locr = button_text {
+		datacontext = "[CharacterListItem.GetCharacter]"
+    using = char_click
+
+    blockoverride "extra" {
+      text_single = {
+        raw_text = "[Character.GetPrimaryTitle.GetNameNoTierNoTooltip],"
+      }
+
+
+      text_single = {
+        raw_text = "[Character.RealmSize] counties,"
+        visible = "[NotEqualTo_int32(Character.GetPrimaryTitle.GetTierFrame, '(int32)2')]" #nonbaron
+      }
+
+      text_single = {
+        raw_text = "[Character.GetMilitaryStrengthText] men,"
+      }
+
+      text_single = {
+        raw_text = "[Character.MakeScope.Var('tributary_type').GetFlagName],"
+      }
+
+      text_single = {
+        raw_text = "Pays"
+      }
+
+      text_single = {
+        raw_text = "gold [Multiply_CFixedPoint(Character.MakeScope.Var('tribute_gold_percent').GetValue,'(CFixedPoint)100')|0]%"
+      }
+
+      text_single = {
+        raw_text = "prestige [Multiply_CFixedPoint(Character.MakeScope.Var('monthly_prestige_suzerain').GetValue,'(CFixedPoint)100')|0]%,"
+      }
+
+      text_single = {
+        raw_text = "piety [Multiply_CFixedPoint(Character.MakeScope.Var('monthly_piety_suzerain').GetValue,'(CFixedPoint)100')|0]%,"
+      }
+    }
+	}
+
+  type vbox_tribs_locr_list = vbox_character_list {
+		visible = "[GetVariableSystem.HasValue('char_tab','tributaries')]"
+
+    state = {
+      name = "reset"
+      trigger_when = "[IsDataModelEmpty(CharacterWindow.GetCharacter.MakeScope.GetList('all_tributaries'))]"
+      on_finish = "[Set('char_tab', 'family')]"
+    }
+		layoutpolicy_vertical = expanding
+		layoutpolicy_horizontal = expanding
+		blockoverride "sort_buttons" {}
+		blockoverride "character_count" {}
+		blockoverride "scrollbox_margins" {
+			margin_top = 20
+		}
+
+		blockoverride "container_implementation" {
+			fixedgridbox = {
+        layoutpolicy_horizontal = expanding
+				name = "characters_grid"
+				datamodel = "[Character.MakeScope.GetList('all_tributaries')]"
+				addcolumn = 590
+				addrow = 25
+				setitemsizefromcell = yes
+				item = {
+					widget_tribs_list_item_locr = {
+						datacontext = "[Scope.GetCharacter]"
+						layoutpolicy_horizontal = expanding
+					}
+				}
+			}
+		}
+		blockoverride "scrollbox_empty_visibility" {
+			visible = "[IsDataModelEmpty(Character.MakeScope.GetList('all_tributaries'))]"
+		}
+	}
+
+  type text_dead_character = hbox {
+
+    text_multi_wide = {
+  		raw_text = "CHARACTER_DEAD_TOOLTIP"
+      visible = "[GetScriptedGui('portrait_dead_non_elf').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]"
+    }
+    text_multi_wide = {
+      name = "is_dead_elf"
+      visible = "[GetScriptedGui('portrait_dead_elf').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" #LotR - death elves by unnatural causes should show as going to Halls of Mandos
+
+      raw_text = "ELF_CHARACTER_DEAD_TOOLTIP"
+    }
+    text_multi_wide = {
+      name = "is_sailed_westdead_elf"
+      visible = "[GetScriptedGui('portrait_sailed_west_dead_elf').IsValid(GuiScope.SetRoot(Character.MakeScope).End)]" #LotR - elves by natural causes should show as "Sailed West"
+      raw_text = "ELF_CHARACTER_NATURALDEATH_TOOLTIP"
+    }
+  }
+
+  type locr_wasteland_character = flowcontainer {
+    layoutpolicy_horizontal = expanding
+    direction = vertical
+    ignoreinvisible = yes
+    using = its_wasteland_locr
+    datacontext = "[CharacterWindow.GetCharacter]"
+
+    button = {
+      shortcut = close_window
+      onclick = "[CharacterWindow.Close]"
+    }
+
+    text_single = {
+      text = "WASTELANDS_TITLE"
+    }
+
+    text_multi_wide = {
+      text = "WASTELANDS_INSTRUCTIONS"
+    }
+  }
+
+  type locr_suzerain = char_name {
+    layoutpolicy_horizontal = expanding
+    datacontext = "[CharacterWindow.GetCharacter.MakeScope.Var('my_suzerain').GetCharacter]"
+    visible = "[CharacterWindow.GetCharacter.MakeScope.Var('my_suzerain').IsSet]"
+    blockoverride "pre" {
+      text_single = {
+        raw_text = "Non de-jure"
+        datacontext = "[CharacterWindow.GetCharacter]"
+        name = "non_dejure_liege"
+        visible = "[Not( Character.GetVassalContract.IsRightfulLiege )]"
+      }
+      text_label_center = {
+        visible = "[CharacterWindow.GetCharacter.MakeScope.Var('overlord_protector').IsSet]"
+        text = "[protector|E]"
+        alwaystransparent = yes
+      }
+
+      text_label_center = {
+        visible = "[CharacterWindow.GetCharacter.MakeScope.Var('overlord_suzerain').IsSet]"
+        text = "[suzerain|E]"
+        alwaystransparent = yes
+      }
+      comma = {}
+    }
+    blockoverride "extra" {
+      text_single = {
+        raw_text = "[Character.GetAge]"
+      }
+
+      opinion_text = { }
+
+      text_single = {
+        visible = "[Not(Character.IsLocalPlayer)]"
+        raw_text = "Opinion of [CharYouHerHim(Character)] is [CharacterWindow.GetCharacter.GetOpinionOf(CharacterWindow.GetCharacter.GetLiegeEvenWhenDead)|=]"
+        tooltip = "[CharacterWindow.GetCharacter.GetOpinionBreakdownText( CharacterWindow.GetCharacter.GetLiegeEvenWhenDead )]"
+      }
+    }
+  }
+
+  type locr_player_heir_is_wasteland = text_single {
+    datacontext = "[CharacterWindow.GetCharacter.GetPlayerHeir]"
+    raw_text = "realm_wasteland_heir"
+    using = its_wasteland_locr
+  }
+  type locr_heir_is_wasteland = text_single {
+    datacontext = "[CharacterWindow.GetCharacter.GetPrimaryTitle.GetHeir]"
+    raw_text = "realm_wasteland_heir"
+    using = its_wasteland_locr
+  }
+}

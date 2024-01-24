@@ -1,0 +1,29 @@
+types OCR {
+  type flow_war_protection_locr = flowcontainer {
+    direction = vertical
+    ignoreinvisible = yes
+
+    # LotR - Protectorate Notifier
+    text_multi_wide = {
+      name = "protectorate_text"
+      datacontext = "[DeclareWarInteractionWindow.GetDefenderCharacter.GetCharacter.MakeScope.Var('my_suzerain').GetCharacter]"
+      visible = "[DeclareWarInteractionWindow.GetDefenderCharacter.GetCharacter.MakeScope.Var('overlord_protector').IsSet]"
+      text = "has_protector_warning"
+    }
+
+    # LotR - Client State Notifier
+    text_multi_wide = {
+      name = "client_state_text"
+      datacontext = "[DeclareWarInteractionWindow.GetDefenderCharacter.GetCharacter.MakeScope.Var('my_suzerain').GetCharacter]"
+      visible = "[DeclareWarInteractionWindow.GetDefenderCharacter.GetCharacter.MakeScope.Var('overlord_suzerain').IsSet]"
+      text = "has_suzerain_warning"
+    }
+
+    # LotR - Suzerain has Tributary States Notifier
+    text_multi_wide = {
+      name = "suzerain_text"
+      visible = "[DataModelHasItems(DeclareWarInteractionWindow.GetDefenderCharacter.GetCharacter.MakeScope.GetList('non_permanent_tributaries'))]"
+      text = "is_suzerain_warning"
+    }
+  }
+}

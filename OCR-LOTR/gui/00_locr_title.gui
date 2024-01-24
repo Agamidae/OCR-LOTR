@@ -1,0 +1,29 @@
+types OCR {
+  type vbox_locr_title_wasteland = vbox {
+		datacontext = "[TitleViewWindow.GetTitle]"
+    layoutpolicy_horizontal = expanding
+    layoutpolicy_vertical = expanding
+    visible = "[LessThan_int32(Title.GetTierFrame, '(int32)4')]"
+
+    vbox = {
+      datacontext = "[GetScriptedGui('gui_not_is_province_wastelands')]"
+      visible = "[Not(ScriptedGui.IsShown( GuiScope.SetRoot( TitleViewWindow.GetTitle.MakeScope ).End))]"
+      layoutpolicy_horizontal = expanding
+      
+      text_single = {
+        layoutpolicy_horizontal = expanding
+        text = "WASTELANDS_TITLE"
+      }
+
+      hbox = {
+        layoutpolicy_horizontal = expanding
+
+        text_multi_wide = {
+          text = "WASTELANDS_INSTRUCTIONS"
+        }
+
+        expand = {}
+      }
+    }
+	}
+}

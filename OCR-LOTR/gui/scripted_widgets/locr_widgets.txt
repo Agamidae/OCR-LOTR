@@ -1,0 +1,2 @@
+﻿
+gui/window_sorcery_locr.gui = sorcery_window

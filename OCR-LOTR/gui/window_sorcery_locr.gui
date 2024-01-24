@@ -1,0 +1,226 @@
+
+empty_screen = {
+	name = "sorcery_window"
+	layer = top
+	visible = "[GetPlayer.IsValid]" # so it doesn't appear in the character selection
+	window_ocr = {
+		datacontext = "[GetPlayer]"
+		blockoverride "show_window" {
+			visible = "[And(And(Is('window_sorcery'), Isnt('ocr')), Or(Isnt('event_active'), Is('hide_event')))]"
+		}
+
+		blockoverride "ocr_header" {
+			header_text = {
+				layoutpolicy_horizontal = expanding
+
+				blockoverride "header_text"
+				{
+					text = "SORCERY_TITLE"
+				}
+
+				blockoverride "button_close"
+				{
+					onclick = "[GetVariableSystem.Clear( 'window_sorcery' )]"
+					onclick = "[GetScriptedGui('unselect_spell').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+					onclick = "[GetScriptedGui('unselect_location').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+				}
+			}
+		}
+
+		blockoverride "ocr_content" {
+
+			flowcontainer = {
+				ignoreinvisible = yes
+				direction = vertical
+				visible = "[Not(GetPlayer.MakeScope.Var('ritual_location').IsSet)]"
+				layoutpolicy_horizontal = expanding
+
+				text_multi_wide = {
+					raw_text = "SORCERY_INSTRUCTIONS"
+				}
+
+				text_multi_wide = {
+					raw_text = "SORCERY_AVAILABLE"
+				}
+
+				button_text = {
+					shortcut = action_list
+					blockoverride "text" {
+						raw_text = "SELECT_RITUAL_LOCATION"
+					}
+					blockoverride "extra" {
+						comma = {}
+						text_single = {
+							raw_text = "Tab."
+						}
+					}
+					onclick = "[GetScriptedGui('select_location').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+					onclick = "[GetScriptedGui('unselect_spell').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+				}
+			}
+
+			button_text = {
+				layoutpolicy_horizontal = expanding
+				shortcut = action_list
+				blockoverride "text" {
+					text = "[Concatenate(Localize('CHANGE_RITUAL_LOCATION'), Localize(Concatenate('ritual_location_', GetPlayer.MakeScope.Var('ritual_location').GetFlagName)))]"
+				}
+				blockoverride "extra" {
+					comma = {}
+					text_single = {
+						raw_text = "Tab."
+					}
+				}
+				onclick = "[GetScriptedGui('select_location').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+				visible = "[GetPlayer.MakeScope.Var('ritual_location').IsSet]"
+			}
+
+
+			flowcontainer = {
+				layoutpolicy_horizontal = expanding
+				direction = vertical
+				ignoreinvisible = yes
+				visible = "[GetPlayer.MakeScope.Var('selected_spell').IsSet]"
+
+				text_single = {
+					raw_text = "selected_spell"
+				}
+
+				text_single = {
+					raw_text = "[Localize(Concatenate(GetPlayer.MakeScope.Var('selected_spell').GetFlagName, '_name'))]."
+				}
+
+				button_primary_text = {
+					blockoverride "text" {
+						text = "PERFORM_RITUAL"
+					}
+					blockoverride "disabled" {
+						visible = "[Not(GetScriptedGui(Concatenate('cast_',GetPlayer.MakeScope.Var('selected_spell').GetFlagName)).IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+					}
+					enabled = "[GetScriptedGui(Concatenate('cast_',GetPlayer.MakeScope.Var('selected_spell').GetFlagName)).IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					onclick = "[GetScriptedGui(Concatenate('cast_',GetPlayer.MakeScope.Var('selected_spell').GetFlagName)).Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					onclick = "[GetScriptedGui('ritual_costs_sgui').Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+					onclick = "[GetVariableSystem.Clear( 'window_sorcery' )]"
+					onclick = "[GetScriptedGui('unselect_spell').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+					onclick = "[GetScriptedGui('unselect_location').Execute(GuiScope.SetRoot( GetPlayer.MakeScope ).End)]"
+					visible = "[And(GetPlayer.MakeScope.Var('ritual_location').IsSet, GetPlayer.MakeScope.Var('selected_spell').IsSet)]"
+				}
+
+				text_multi_wide = {
+					visible = "[Isnt('spell_effects')]"
+					raw_text = "[Localize(Concatenate(GetPlayer.MakeScope.Var('selected_spell').GetFlagName, '_desc'))]"
+				}
+
+				button_text = {
+					shortcut = map_mode_1
+					onclick = "[Toggle('spell_effects')]"
+					blockoverride "text" {
+						raw_text = "EFFECTS"
+					}
+
+					blockoverride "extra" {
+						text_single = {
+							raw_text = "[Collapse('spell_effects')] E."
+						}
+					}
+				}
+
+				text_multi_wide = {
+					visible = "[Isnt('spell_effects')]"
+					text = "[GetScriptedGui(Concatenate('cast_',GetPlayer.MakeScope.Var('selected_spell').GetFlagName)).ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+				}
+
+				text_multi_wide = {
+					raw_text = "wait_for_spell"
+				}
+			}
+
+			flowcontainer = {
+				ignoreinvisible = yes
+				direction = vertical
+				layoutpolicy_horizontal = expanding
+				margin_top = 10
+				visible = "[GetPlayer.MakeScope.Var('ritual_location').IsSet]"
+
+				flowcontainer = {
+					spacing = 3
+
+					text_single = {
+						raw_text = "SELECT_SPELL"
+					}
+					comma = {}
+
+					text_single = {
+						raw_text = "[GetDataModelSize(GetGlobalList('global_spells_list'))]"
+					}
+
+					text_single = {
+						raw_text = "options:"
+					}
+
+					expand = {}
+				}
+
+
+				flowcontainer = {
+					ignoreinvisible = yes
+					direction = vertical
+
+					datamodel = "[GetGlobalList('global_spells_list')]"
+
+					item = {
+						button_text = {
+							onclick = "[GetScriptedGui(Concatenate('select_',Scope.GetFlagName)).Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							enabled = "[GetScriptedGui(Concatenate('select_',Scope.GetFlagName)).IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+							blockoverride "text" {
+								raw_text = "[Localize(Concatenate(Scope.GetFlagName,'_name'))],"
+							}
+							blockoverride "extra" {
+								shortcuts_f1 = {
+									blockoverride "click" {
+										onclick = "[GetScriptedGui(Concatenate('select_',Scope.GetFlagName)).Execute(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									}
+								}
+								dot_l = {}
+							}
+							blockoverride "pre" {
+								text_single = {
+									visible = "[Not(GetScriptedGui(Concatenate('select_',Scope.GetFlagName)).IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+									raw_text = "cant_pick"
+								}
+							}
+							# blockoverride "extra" {
+							# 	text_single = {
+							# 		raw_text = "[GetPlayer.MakeScope.ScriptValue(Concatenate('success_',Scope.GetFlagName))|0]% chance."
+							# 	}
+							# }
+
+							tooltipwidget = {
+								using = ocr_twidget
+								blockoverride "ocr_twidget" {
+
+									text_single = {
+										raw_text = "[GetScriptedGui(Concatenate('select_',Scope.GetFlagName)).IsValidTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+										visible = "[Not(GetScriptedGui(Concatenate('select_',Scope.GetFlagName)).IsValid(GuiScope.SetRoot(GetPlayer.MakeScope).End))]"
+									}
+
+									text_single = {
+										raw_text = "[Localize(Concatenate(Scope.GetFlagName, '_name'))]."
+									}
+
+									text_multi_wide = {
+										raw_text = "[Localize(Concatenate(Scope.GetFlagName, '_desc'))]"
+									}
+
+
+									text_multi_wide = {
+										text = "[GetScriptedGui(Concatenate('cast_',Scope.GetFlagName)).ExecuteTooltip(GuiScope.SetRoot(GetPlayer.MakeScope).End)]"
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+}

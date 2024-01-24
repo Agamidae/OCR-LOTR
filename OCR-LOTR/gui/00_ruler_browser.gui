@@ -1,0 +1,113 @@
+types OCR_TC {
+  # multiplayer and realm
+  type button_tab_rulers = button_text {
+    visible = "[Not(GetVariableSystem.HasValue('realm_tabs', 'rulers'))]"
+    layoutpolicy_horizontal = expanding
+    onclick = "[GetVariableSystem.Set('realm_tabs', 'rulers')]"
+    onclick = "[GetScriptedGui('de_jure_empires').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).End )]"
+    blockoverride "pre" {
+      text_single = {
+        raw_text = "G,"
+      }
+      text_single = {
+        raw_text = " showing"
+        visible = "[GetVariableSystem.HasValue('realm_tabs', 'rulers')]"
+      }
+      space = { }
+    }
+    blockoverride "text" {
+      raw_text = "Browse rulers by empire"
+    }
+    blockoverride "dot" {
+
+    }
+    shortcut = army_merge
+  }
+
+  type vbox_ruler_browser = vbox {
+    layoutpolicy_vertical = expanding
+    layoutpolicy_horizontal = expanding
+
+    block "exit" {
+      button = {
+        onclick = "[GetVariableSystem.Clear('regions')]"
+        shortcut = army_merge
+        shortcut = close_window
+      }
+    }
+
+    text_single = {
+      layoutpolicy_horizontal = expanding
+      visible = "[Not(GetVariableSystem.Exists('kingdom_list'))]"
+      block "count" {
+        raw_text = "There are [EmptyScope.ScriptValue('all_playable_rulers')] independent rulers who are not theocratic or republican."
+      }
+    }
+
+    vbox = {
+      layoutpolicy_horizontal = expanding
+      datamodel = "[GetGlobalList('de_jure_empires')]"
+
+      item = {
+        vbox = {
+          visible = "[DataModelHasItems(Scope.GetList('independent_rulers'))]"
+          layoutpolicy_horizontal = expanding
+
+          button_text = {
+            layoutpolicy_horizontal = expanding
+            visible = "[Or(GetVariableSystem.HasValue('kingdom_list', Scope.Title.GetNameNoTierNoTooltip), Not(GetVariableSystem.Exists('kingdom_list')))]"
+            onclick = "[GetVariableSystem.Set('kingdom_list', Scope.Title.GetNameNoTierNoTooltip)]"
+            blockoverride "text" {
+              raw_text = "[Scope.Title.GetNameNoTierNoTooltip], [GetDataModelSize( Scope.GetList('independent_rulers') )]."
+            }
+          }
+
+          region_list = {
+            visible = "[GetVariableSystem.HasValue('kingdom_list', Scope.Title.GetNameNoTierNoTooltip)]"
+            datamodel = "[Scope.GetList('independent_rulers')]"
+          }
+        }
+      }
+    }
+    # close
+    button_text = {
+      layoutpolicy_horizontal = expanding
+      blockoverride "text" {
+        raw_text = "Go back, B or Escape."
+      }
+      visible = "[GetVariableSystem.Exists('kingdom_list')]"
+      onclick = "[GetVariableSystem.Clear('kingdom_list')]"
+      shortcut = go_back
+      shortcut = close_window
+    }
+
+    expand = { }
+  }
+
+  type button_regions = button_text {
+    blockoverride "text" {
+      raw_text = "View by de jure empire, hotkey G."
+    }
+    onclick = "[GetVariableSystem.Toggle('regions')]"
+    onclick = "[GetScriptedGui('de_jure_empires').Execute( GuiScope.End )]"
+
+    shortcut = army_merge
+  }
+
+  type button_ruler_browser = button {
+		shortcut = army_merge
+		# onclick = "[ToggleGameView( 'my_realm' )]"
+    onclick = "[GetVariableSystem.Toggle('ruler_browser')]"
+    onclick = "[GetScriptedGui('de_jure_empires').Execute( GuiScope.End )]"
+		visible = "[And(Not(Or(Or(IsGameViewOpen('army'), IsGameViewOpen('my_realm')), IsGameViewOpen('men_at_arms'))), GetPlayer.IsValid)]"
+		using = close_character
+	}
+}
+
+template submod_rulers_empire {
+  onclick = "[GetScriptedGui('de_jure_empires').Execute( GuiScope.End )]"
+}
+
+template submod_rulers_empire_finish {
+  on_finish = "[GetScriptedGui('de_jure_empires').Execute( GuiScope.End )]"
+}

@@ -1,0 +1,31 @@
+template show_selected_character_lobby {
+  datacontext = "[GetScriptedGui('gui_not_is_character_wastelands')]"
+  visible = "[And(Character.IsValid, ScriptedGui.IsShown( GuiScope.SetRoot( Character.MakeScope ).End))]"
+}
+
+types OCR {
+  type vbox_selected_wasteland_locr = vbox {
+    layoutpolicy_horizontal = expanding
+    layoutpolicy_vertical = expanding
+
+    using = its_wasteland_locr
+
+    text_single = {
+      layoutpolicy_horizontal = expanding
+      raw_text = "This is a wasteland."
+    }
+
+    button_text = {
+      layoutpolicy_horizontal = expanding
+      blockoverride "text" {
+        raw_text = "Select another character, hotkey B or Escape."
+      }
+      onclick = "[GetVariableSystem.Set('selected_character', 'yes')]"
+      shortcut = go_back
+      shortcut = close_window
+    }
+
+
+    expand = {}
+  }
+}

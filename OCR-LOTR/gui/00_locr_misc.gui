@@ -1,0 +1,37 @@
+template locr_hide {
+  visible = no
+}
+template zoom_out_title {
+  datacontext = "[GetTitleByKey('e_the_iron_throne')]"
+}
+
+template text_mp_date {
+	raw_text = "frontend_mp_game_setup_date_replace"
+}
+
+template not_wasteland_locr {
+  visible = "[GetScriptedGui('gui_not_is_character_wastelands').IsShown( GuiScope.SetRoot( Character.MakeScope ).End )]"
+}
+
+template hide_wasteland_locr {
+  visible = "[Not(GetScriptedGui('gui_not_is_character_wastelands').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+}
+template its_wasteland_locr {
+  visible = "[Not(GetScriptedGui('gui_not_is_character_wastelands').IsShown( GuiScope.SetRoot( Character.MakeScope ).End ))]"
+}
+template locr_county_not_wasteland {
+  visible = "[Not(GetScriptedGui('gui_is_province_wastelands').IsShown( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).End))]"
+}
+
+template locr_county_is_wasteland {
+  visible = "[GetScriptedGui('gui_is_province_wastelands').IsShown( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).End)]"
+}
+
+template locr_title_not_wasteland {
+  visible = "[GetScriptedGui(Select_CString(LessThan_int32(Title.GetTierFrame, '(int32)4'), 'gui_not_is_province_wastelands', 'locr_yes')).IsShown( GuiScope.SetRoot( TitleViewWindow.GetTitle.MakeScope ).End )]"
+}
+
+template locr_title_is_wasteland {
+  datacontext = "[GetScriptedGui('gui_not_is_province_wastelands')]"
+  visible = "[Not(ScriptedGui.IsShown( GuiScope.SetRoot( TitleViewWindow.GetTitle.MakeScope ).End))]"
+}

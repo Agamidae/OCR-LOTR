@@ -1,0 +1,1058 @@
+﻿
+
+
+special_buildings_switch = {
+
+	if = {
+		limit = {
+			NOT = { has_variable = special_building }
+		}
+		switch = {
+			trigger = has_building
+
+			wonder_edoras_01 = {
+				set_variable = { name = special_building value = flag:wonder_edoras_01 }
+				if = { limit = { var:special_building = flag:wonder_edoras_01 } }
+			}
+			wonder_edoras_02_meduseld = {
+				set_variable = { name = special_building value = flag:wonder_edoras_02_meduseld }
+				if = { limit = { var:special_building = flag:wonder_edoras_02_meduseld } }
+			}
+			wonder_edoras_03_barrowfield = {
+				set_variable = { name = special_building value = flag:wonder_edoras_03_barrowfield }
+				if = { limit = { var:special_building = flag:wonder_edoras_03_barrowfield } }
+			}
+			wonder_dunharrow_01 = {
+				set_variable = { name = special_building value = flag:wonder_dunharrow_01 }
+				if = { limit = { var:special_building = flag:wonder_dunharrow_01 } }
+			}
+			wonder_aldburg_01 = {
+				set_variable = { name = special_building value = flag:wonder_aldburg_01 }
+				if = { limit = { var:special_building = flag:wonder_aldburg_01 } }
+			}
+			wonder_aglarond_01 = {
+				set_variable = { name = special_building value = flag:wonder_aglarond_01 }
+				if = { limit = { var:special_building = flag:wonder_aglarond_01 } }
+			}
+			wonder_aglarond_02_helm = {
+				set_variable = { name = special_building value = flag:wonder_aglarond_02_helm }
+				if = { limit = { var:special_building = flag:wonder_aglarond_02_helm } }
+			}
+			wonder_aglarond_03_dike = {
+				set_variable = { name = special_building value = flag:wonder_aglarond_03_dike }
+				if = { limit = { var:special_building = flag:wonder_aglarond_03_dike } }
+			}
+			wonder_angrenost_01 = {
+				set_variable = { name = special_building value = flag:wonder_angrenost_01 }
+				if = { limit = { var:special_building = flag:wonder_angrenost_01 } }
+			}
+			wonder_angrenost_02_storehouses = {
+				set_variable = { name = special_building value = flag:wonder_angrenost_02_storehouses }
+				if = { limit = { var:special_building = flag:wonder_angrenost_02_storehouses } }
+			}
+			wonder_angrenost_03_palantir = {
+				set_variable = { name = special_building value = flag:wonder_angrenost_03_palantir }
+				if = { limit = { var:special_building = flag:wonder_angrenost_03_palantir } }
+			}
+			wonder_eorls_hallow_01 = {
+				set_variable = { name = special_building value = flag:wonder_eorls_hallow_01 }
+				if = { limit = { var:special_building = flag:wonder_eorls_hallow_01 } }
+			}
+			wonder_north_undeep_01 = {
+				set_variable = { name = special_building value = flag:wonder_north_undeep_01 }
+				if = { limit = { var:special_building = flag:wonder_north_undeep_01 } }
+			}
+			wonder_north_undeep_02 = {
+				set_variable = { name = special_building value = flag:wonder_north_undeep_02 }
+				if = { limit = { var:special_building = flag:wonder_north_undeep_02 } }
+			}
+			wonder_south_undeep_01 = {
+				set_variable = { name = special_building value = flag:wonder_south_undeep_01 }
+				if = { limit = { var:special_building = flag:wonder_south_undeep_01 } }
+			}
+			wonder_south_undeep_02 = {
+				set_variable = { name = special_building value = flag:wonder_south_undeep_02 }
+				if = { limit = { var:special_building = flag:wonder_south_undeep_02 } }
+			}
+			wonder_wulfborg_01 = {
+				set_variable = { name = special_building value = flag:wonder_wulfborg_01 }
+				if = { limit = { var:special_building = flag:wonder_wulfborg_01 } }
+			}
+			wonder_wulfborg_02 = {
+				set_variable = { name = special_building value = flag:wonder_wulfborg_02 }
+				if = { limit = { var:special_building = flag:wonder_wulfborg_02 } }
+			}
+			wonder_wulfborg_03 = {
+				set_variable = { name = special_building value = flag:wonder_wulfborg_03 }
+				if = { limit = { var:special_building = flag:wonder_wulfborg_03 } }
+			}
+			wonder_city_of_the_dead_01 = {
+				set_variable = { name = special_building value = flag:wonder_city_of_the_dead_01 }
+				if = { limit = { var:special_building = flag:wonder_city_of_the_dead_01 } }
+			}
+			wonder_enie_iaur = {
+				set_variable = { name = special_building value = flag:wonder_enie_iaur }
+				if = { limit = { var:special_building = flag:wonder_enie_iaur } }
+			}
+			wonder_rammas_echor_01 = {
+				set_variable = { name = special_building value = flag:wonder_rammas_echor_01 }
+				if = { limit = { var:special_building = flag:wonder_rammas_echor_01 } }
+			}
+			wonder_rammas_echor_02 = {
+				set_variable = { name = special_building value = flag:wonder_rammas_echor_02 }
+				if = { limit = { var:special_building = flag:wonder_rammas_echor_02 } }
+			}
+			wonder_minas_anor_01 = {
+				set_variable = { name = special_building value = flag:wonder_minas_anor_01 }
+				if = { limit = { var:special_building = flag:wonder_minas_anor_01 } }
+			}
+			wonder_minas_anor_02 = {
+				set_variable = { name = special_building value = flag:wonder_minas_anor_02 }
+				if = { limit = { var:special_building = flag:wonder_minas_anor_02 } }
+			}
+			wonder_minas_anor_03 = {
+				set_variable = { name = special_building value = flag:wonder_minas_anor_03 }
+				if = { limit = { var:special_building = flag:wonder_minas_anor_03 } }
+			}
+			wonder_minas_anor_04 = {
+				set_variable = { name = special_building value = flag:wonder_minas_anor_04 }
+				if = { limit = { var:special_building = flag:wonder_minas_anor_04 } }
+			}
+			wonder_minas_ithil_01 = {
+				set_variable = { name = special_building value = flag:wonder_minas_ithil_01 }
+				if = { limit = { var:special_building = flag:wonder_minas_ithil_01 } }
+			}
+			wonder_minas_ithil_02 = {
+				set_variable = { name = special_building value = flag:wonder_minas_ithil_02 }
+				if = { limit = { var:special_building = flag:wonder_minas_ithil_02 } }
+			}
+			wonder_minas_ithil_03 = {
+				set_variable = { name = special_building value = flag:wonder_minas_ithil_03 }
+				if = { limit = { var:special_building = flag:wonder_minas_ithil_03 } }
+			}
+			wonder_cirith_ungol_01 = {
+				set_variable = { name = special_building value = flag:wonder_cirith_ungol_01 }
+				if = { limit = { var:special_building = flag:wonder_cirith_ungol_01 } }
+			}
+			wonder_port_of_pelargir_01 = {
+				set_variable = { name = special_building value = flag:wonder_port_of_pelargir_01 }
+				if = { limit = { var:special_building = flag:wonder_port_of_pelargir_01 } }
+			}
+			wonder_port_of_pelargir_02 = {
+				set_variable = { name = special_building value = flag:wonder_port_of_pelargir_02 }
+				if = { limit = { var:special_building = flag:wonder_port_of_pelargir_02 } }
+			}
+			wonder_port_of_pelargir_03 = {
+				set_variable = { name = special_building value = flag:wonder_port_of_pelargir_03 }
+				if = { limit = { var:special_building = flag:wonder_port_of_pelargir_03 } }
+			}
+			wonder_dol_amroth_01 = {
+				set_variable = { name = special_building value = flag:wonder_dol_amroth_01 }
+				if = { limit = { var:special_building = flag:wonder_dol_amroth_01 } }
+			}
+			wonder_dol_amroth_02 = {
+				set_variable = { name = special_building value = flag:wonder_dol_amroth_02 }
+				if = { limit = { var:special_building = flag:wonder_dol_amroth_02 } }
+			}
+			wonder_dol_amroth_03 = {
+				set_variable = { name = special_building value = flag:wonder_dol_amroth_03 }
+				if = { limit = { var:special_building = flag:wonder_dol_amroth_03 } }
+			}
+			wonder_imrazor_hallow = {
+				set_variable = { name = special_building value = flag:wonder_imrazor_hallow }
+				if = { limit = { var:special_building = flag:wonder_imrazor_hallow } }
+			}
+			wonder_tharagrondost = {
+				set_variable = { name = special_building value = flag:wonder_tharagrondost }
+				if = { limit = { var:special_building = flag:wonder_tharagrondost } }
+			}
+			wonder_erech = {
+				set_variable = { name = special_building value = flag:wonder_erech }
+				if = { limit = { var:special_building = flag:wonder_erech } }
+			}
+			wonder_barmorthil = {
+				set_variable = { name = special_building value = flag:wonder_barmorthil }
+				if = { limit = { var:special_building = flag:wonder_barmorthil } }
+			}
+			wonder_walls_linhir = {
+				set_variable = { name = special_building value = flag:wonder_walls_linhir }
+				if = { limit = { var:special_building = flag:wonder_walls_linhir } }
+			}
+			wonder_osgiliath_01 = {
+				set_variable = { name = special_building value = flag:wonder_osgiliath_01 }
+				if = { limit = { var:special_building = flag:wonder_osgiliath_01 } }
+			}
+			wonder_osgiliath_02 = {
+				set_variable = { name = special_building value = flag:wonder_osgiliath_02 }
+				if = { limit = { var:special_building = flag:wonder_osgiliath_02 } }
+			}
+			wonder_osgiliath_03 = {
+				set_variable = { name = special_building value = flag:wonder_osgiliath_03 }
+				if = { limit = { var:special_building = flag:wonder_osgiliath_03 } }
+			}
+			wonder_osgiliath_04 = {
+				set_variable = { name = special_building value = flag:wonder_osgiliath_04 }
+				if = { limit = { var:special_building = flag:wonder_osgiliath_04 } }
+			}
+			wonder_osgiliath_05 = {
+				set_variable = { name = special_building value = flag:wonder_osgiliath_05 }
+				if = { limit = { var:special_building = flag:wonder_osgiliath_05 } }
+			}
+			wonder_henneth_annun = {
+				set_variable = { name = special_building value = flag:wonder_henneth_annun }
+				if = { limit = { var:special_building = flag:wonder_henneth_annun } }
+			}
+			wonder_palace_of_ithilien = {
+				set_variable = { name = special_building value = flag:wonder_palace_of_ithilien }
+				if = { limit = { var:special_building = flag:wonder_palace_of_ithilien } }
+			}
+			wonder_citadel_cairos_01 = {
+				set_variable = { name = special_building value = flag:wonder_citadel_cairos_01 }
+				if = { limit = { var:special_building = flag:wonder_citadel_cairos_01 } }
+			}
+			wonder_citadel_cairos_02 = {
+				set_variable = { name = special_building value = flag:wonder_citadel_cairos_02 }
+				if = { limit = { var:special_building = flag:wonder_citadel_cairos_02 } }
+			}
+			wonder_edhellond_01 = {
+				set_variable = { name = special_building value = flag:wonder_edhellond_01 }
+				if = { limit = { var:special_building = flag:wonder_edhellond_01 } }
+			}
+			wonder_edhellond_02 = {
+				set_variable = { name = special_building value = flag:wonder_edhellond_02 }
+				if = { limit = { var:special_building = flag:wonder_edhellond_02 } }
+			}
+			wonder_edhellond_03 = {
+				set_variable = { name = special_building value = flag:wonder_edhellond_03 }
+				if = { limit = { var:special_building = flag:wonder_edhellond_03 } }
+			}
+			wonder_baraddur = {
+				set_variable = { name = special_building value = flag:wonder_baraddur }
+				if = { limit = { var:special_building = flag:wonder_baraddur } }
+			}
+			wonder_orodruin = {
+				set_variable = { name = special_building value = flag:wonder_orodruin }
+				if = { limit = { var:special_building = flag:wonder_orodruin } }
+			}
+			wonder_thaurband_01 = {
+				set_variable = { name = special_building value = flag:wonder_thaurband_01 }
+				if = { limit = { var:special_building = flag:wonder_thaurband_01 } }
+			}
+			wonder_thaurband_02 = {
+				set_variable = { name = special_building value = flag:wonder_thaurband_02 }
+				if = { limit = { var:special_building = flag:wonder_thaurband_02 } }
+			}
+			wonder_thaurband_03 = {
+				set_variable = { name = special_building value = flag:wonder_thaurband_03 }
+				if = { limit = { var:special_building = flag:wonder_thaurband_03 } }
+			}
+			wonder_black_gate = {
+				set_variable = { name = special_building value = flag:wonder_black_gate }
+				if = { limit = { var:special_building = flag:wonder_black_gate } }
+			}
+			wonder_palace_of_haruzan_01 = {
+				set_variable = { name = special_building value = flag:wonder_palace_of_haruzan_01 }
+				if = { limit = { var:special_building = flag:wonder_palace_of_haruzan_01 } }
+			}
+			wonder_palace_of_haruzan_02 = {
+				set_variable = { name = special_building value = flag:wonder_palace_of_haruzan_02 }
+				if = { limit = { var:special_building = flag:wonder_palace_of_haruzan_02 } }
+			}
+			wonder_palace_of_haruzan_03 = {
+				set_variable = { name = special_building value = flag:wonder_palace_of_haruzan_03 }
+				if = { limit = { var:special_building = flag:wonder_palace_of_haruzan_03 } }
+			}
+			wonder_palace_of_haruzan_04 = {
+				set_variable = { name = special_building value = flag:wonder_palace_of_haruzan_04 }
+				if = { limit = { var:special_building = flag:wonder_palace_of_haruzan_04 } }
+			}
+			wonder_mirlond = {
+				set_variable = { name = special_building value = flag:wonder_mirlond }
+				if = { limit = { var:special_building = flag:wonder_mirlond } }
+			}
+			wonder_ramlond = {
+				set_variable = { name = special_building value = flag:wonder_ramlond }
+				if = { limit = { var:special_building = flag:wonder_ramlond } }
+			}
+			wonder_ancalimon = {
+				set_variable = { name = special_building value = flag:wonder_ancalimon }
+				if = { limit = { var:special_building = flag:wonder_ancalimon } }
+			}
+			wonder_starlurtsa_khand_01 = {
+				set_variable = { name = special_building value = flag:wonder_starlurtsa_khand_01 }
+				if = { limit = { var:special_building = flag:wonder_starlurtsa_khand_01 } }
+			}
+			wonder_madh_ortogh = {
+				set_variable = { name = special_building value = flag:wonder_madh_ortogh }
+				if = { limit = { var:special_building = flag:wonder_madh_ortogh } }
+			}
+			wonder_hron_tumrakhi = {
+				set_variable = { name = special_building value = flag:wonder_hron_tumrakhi }
+				if = { limit = { var:special_building = flag:wonder_hron_tumrakhi } }
+			}
+			wonder_umbar_01 = {
+				set_variable = { name = special_building value = flag:wonder_umbar_01 }
+				if = { limit = { var:special_building = flag:wonder_umbar_01 } }
+			}
+			wonder_umbar_02 = {
+				set_variable = { name = special_building value = flag:wonder_umbar_02 }
+				if = { limit = { var:special_building = flag:wonder_umbar_02 } }
+			}
+			wonder_umbar_03 = {
+				set_variable = { name = special_building value = flag:wonder_umbar_03 }
+				if = { limit = { var:special_building = flag:wonder_umbar_03 } }
+			}
+			wonder_umbar_04 = {
+				set_variable = { name = special_building value = flag:wonder_umbar_04 }
+				if = { limit = { var:special_building = flag:wonder_umbar_04 } }
+			}
+			wonder_umbar_citadel = {
+				set_variable = { name = special_building value = flag:wonder_umbar_citadel }
+				if = { limit = { var:special_building = flag:wonder_umbar_citadel } }
+			}
+			wonder_arminalethor_01 = {
+				set_variable = { name = special_building value = flag:wonder_arminalethor_01 }
+				if = { limit = { var:special_building = flag:wonder_arminalethor_01 } }
+			}
+			wonder_arminalethor_02 = {
+				set_variable = { name = special_building value = flag:wonder_arminalethor_02 }
+				if = { limit = { var:special_building = flag:wonder_arminalethor_02 } }
+			}
+			wonder_arminalethor_03 = {
+				set_variable = { name = special_building value = flag:wonder_arminalethor_03 }
+				if = { limit = { var:special_building = flag:wonder_arminalethor_03 } }
+			}
+			wonder_citadel_hyarmendacil_01 = {
+				set_variable = { name = special_building value = flag:wonder_citadel_hyarmendacil_01 }
+				if = { limit = { var:special_building = flag:wonder_citadel_hyarmendacil_01 } }
+			}
+			wonder_citadel_hyarmendacil_02 = {
+				set_variable = { name = special_building value = flag:wonder_citadel_hyarmendacil_02 }
+				if = { limit = { var:special_building = flag:wonder_citadel_hyarmendacil_02 } }
+			}
+			wonder_souk_mazharath = {
+				set_variable = { name = special_building value = flag:wonder_souk_mazharath }
+				if = { limit = { var:special_building = flag:wonder_souk_mazharath } }
+			}
+			wonder_nilulonde_01 = {
+				set_variable = { name = special_building value = flag:wonder_nilulonde_01 }
+				if = { limit = { var:special_building = flag:wonder_nilulonde_01 } }
+			}
+			wonder_nilulonde_02 = {
+				set_variable = { name = special_building value = flag:wonder_nilulonde_02 }
+				if = { limit = { var:special_building = flag:wonder_nilulonde_02 } }
+			}
+			wonder_nilulonde_03 = {
+				set_variable = { name = special_building value = flag:wonder_nilulonde_03 }
+				if = { limit = { var:special_building = flag:wonder_nilulonde_03 } }
+			}
+			wonder_urud_an_khibil_monestary = {
+				set_variable = { name = special_building value = flag:wonder_urud_an_khibil_monestary }
+				if = { limit = { var:special_building = flag:wonder_urud_an_khibil_monestary } }
+			}
+			wonder_ishtra_shrine = {
+				set_variable = { name = special_building value = flag:wonder_ishtra_shrine }
+				if = { limit = { var:special_building = flag:wonder_ishtra_shrine } }
+			}
+			wonder_palace_joam = {
+				set_variable = { name = special_building value = flag:wonder_palace_joam }
+				if = { limit = { var:special_building = flag:wonder_palace_joam } }
+			}
+			wonder_rophazan_mines = {
+				set_variable = { name = special_building value = flag:wonder_rophazan_mines }
+				if = { limit = { var:special_building = flag:wonder_rophazan_mines } }
+			}
+			wonder_coves_irtil = {
+				set_variable = { name = special_building value = flag:wonder_coves_irtil }
+				if = { limit = { var:special_building = flag:wonder_coves_irtil } }
+			}
+			wonder_beacon_sornomar = {
+				set_variable = { name = special_building value = flag:wonder_beacon_sornomar }
+				if = { limit = { var:special_building = flag:wonder_beacon_sornomar } }
+			}
+			wonder_shipyards_nykkea = {
+				set_variable = { name = special_building value = flag:wonder_shipyards_nykkea }
+				if = { limit = { var:special_building = flag:wonder_shipyards_nykkea } }
+			}
+			wonder_arch_ciryandur = {
+				set_variable = { name = special_building value = flag:wonder_arch_ciryandur }
+				if = { limit = { var:special_building = flag:wonder_arch_ciryandur } }
+			}
+			wonder_haven_korlea = {
+				set_variable = { name = special_building value = flag:wonder_haven_korlea }
+				if = { limit = { var:special_building = flag:wonder_haven_korlea } }
+			}
+			wonder_pillar_urez = {
+				set_variable = { name = special_building value = flag:wonder_pillar_urez }
+				if = { limit = { var:special_building = flag:wonder_pillar_urez } }
+			}
+			wonder_bozisha_dar_port_01 = {
+				set_variable = { name = special_building value = flag:wonder_bozisha_dar_port_01 }
+				if = { limit = { var:special_building = flag:wonder_bozisha_dar_port_01 } }
+			}
+			wonder_bozisha_dar_port_02 = {
+				set_variable = { name = special_building value = flag:wonder_bozisha_dar_port_02 }
+				if = { limit = { var:special_building = flag:wonder_bozisha_dar_port_02 } }
+			}
+			wonder_citadel_of_tresti = {
+				set_variable = { name = special_building value = flag:wonder_citadel_of_tresti }
+				if = { limit = { var:special_building = flag:wonder_citadel_of_tresti } }
+			}
+			wonder_temple_city_of_pred_01 = {
+				set_variable = { name = special_building value = flag:wonder_temple_city_of_pred_01 }
+				if = { limit = { var:special_building = flag:wonder_temple_city_of_pred_01 } }
+			}
+			wonder_temple_city_of_pred_02 = {
+				set_variable = { name = special_building value = flag:wonder_temple_city_of_pred_02 }
+				if = { limit = { var:special_building = flag:wonder_temple_city_of_pred_02 } }
+			}
+			wonder_temple_city_of_pred_03 = {
+				set_variable = { name = special_building value = flag:wonder_temple_city_of_pred_03 }
+				if = { limit = { var:special_building = flag:wonder_temple_city_of_pred_03 } }
+			}
+			wonder_marath_kharadune_01 = {
+				set_variable = { name = special_building value = flag:wonder_marath_kharadune_01 }
+				if = { limit = { var:special_building = flag:wonder_marath_kharadune_01 } }
+			}
+			wonder_marath_kharadune_02 = {
+				set_variable = { name = special_building value = flag:wonder_marath_kharadune_02 }
+				if = { limit = { var:special_building = flag:wonder_marath_kharadune_02 } }
+			}
+			wonder_marath_kharadune_03 = {
+				set_variable = { name = special_building value = flag:wonder_marath_kharadune_03 }
+				if = { limit = { var:special_building = flag:wonder_marath_kharadune_03 } }
+			}
+			wonder_lighthouse_of_adunazain = {
+				set_variable = { name = special_building value = flag:wonder_lighthouse_of_adunazain }
+				if = { limit = { var:special_building = flag:wonder_lighthouse_of_adunazain } }
+			}
+			wonder_abaraglareth = {
+				set_variable = { name = special_building value = flag:wonder_abaraglareth }
+				if = { limit = { var:special_building = flag:wonder_abaraglareth } }
+			}
+			wonder_zekhetz_palace_complex_01 = {
+				set_variable = { name = special_building value = flag:wonder_zekhetz_palace_complex_01 }
+				if = { limit = { var:special_building = flag:wonder_zekhetz_palace_complex_01 } }
+			}
+			wonder_zekhetz_palace_complex_02 = {
+				set_variable = { name = special_building value = flag:wonder_zekhetz_palace_complex_02 }
+				if = { limit = { var:special_building = flag:wonder_zekhetz_palace_complex_02 } }
+			}
+			wonder_zekhetz_palace_complex_03 = {
+				set_variable = { name = special_building value = flag:wonder_zekhetz_palace_complex_03 }
+				if = { limit = { var:special_building = flag:wonder_zekhetz_palace_complex_03 } }
+			}
+			wonder_abrakhan_bazaar_complex_01 = {
+				set_variable = { name = special_building value = flag:wonder_abrakhan_bazaar_complex_01 }
+				if = { limit = { var:special_building = flag:wonder_abrakhan_bazaar_complex_01 } }
+			}
+			wonder_abrakhan_bazaar_complex_02 = {
+				set_variable = { name = special_building value = flag:wonder_abrakhan_bazaar_complex_02 }
+				if = { limit = { var:special_building = flag:wonder_abrakhan_bazaar_complex_02 } }
+			}
+			wonder_abrakhan_bazaar_complex_03 = {
+				set_variable = { name = special_building value = flag:wonder_abrakhan_bazaar_complex_03 }
+				if = { limit = { var:special_building = flag:wonder_abrakhan_bazaar_complex_03 } }
+			}
+			wonder_zaja_shar_noria_01 = {
+				set_variable = { name = special_building value = flag:wonder_zaja_shar_noria_01 }
+				if = { limit = { var:special_building = flag:wonder_zaja_shar_noria_01 } }
+			}
+			wonder_zaja_shar_noria_02 = {
+				set_variable = { name = special_building value = flag:wonder_zaja_shar_noria_02 }
+				if = { limit = { var:special_building = flag:wonder_zaja_shar_noria_02 } }
+			}
+			wonder_zaja_shar_noria_03 = {
+				set_variable = { name = special_building value = flag:wonder_zaja_shar_noria_03 }
+				if = { limit = { var:special_building = flag:wonder_zaja_shar_noria_03 } }
+			}
+			wonder_hamat_maresh_01 = {
+				set_variable = { name = special_building value = flag:wonder_hamat_maresh_01 }
+				if = { limit = { var:special_building = flag:wonder_hamat_maresh_01 } }
+			}
+			wonder_hamat_maresh_02 = {
+				set_variable = { name = special_building value = flag:wonder_hamat_maresh_02 }
+				if = { limit = { var:special_building = flag:wonder_hamat_maresh_02 } }
+			}
+			wonder_hamat_maresh_03 = {
+				set_variable = { name = special_building value = flag:wonder_hamat_maresh_03 }
+				if = { limit = { var:special_building = flag:wonder_hamat_maresh_03 } }
+			}
+			wonder_beorns_hall = {
+				set_variable = { name = special_building value = flag:wonder_beorns_hall }
+				if = { limit = { var:special_building = flag:wonder_beorns_hall } }
+			}
+			wonder_carrock = {
+				set_variable = { name = special_building value = flag:wonder_carrock }
+				if = { limit = { var:special_building = flag:wonder_carrock } }
+			}
+			wonder_sairthiudabaurg = {
+				set_variable = { name = special_building value = flag:wonder_sairthiudabaurg }
+				if = { limit = { var:special_building = flag:wonder_sairthiudabaurg } }
+			}
+			wonder_melburg_walls = {
+				set_variable = { name = special_building value = flag:wonder_melburg_walls }
+				if = { limit = { var:special_building = flag:wonder_melburg_walls } }
+			}
+			wonder_framsburg_01 = {
+				set_variable = { name = special_building value = flag:wonder_framsburg_01 }
+				if = { limit = { var:special_building = flag:wonder_framsburg_01 } }
+			}
+			wonder_framsburg_02 = {
+				set_variable = { name = special_building value = flag:wonder_framsburg_02 }
+				if = { limit = { var:special_building = flag:wonder_framsburg_02 } }
+			}
+			wonder_framsburg_03 = {
+				set_variable = { name = special_building value = flag:wonder_framsburg_03 }
+				if = { limit = { var:special_building = flag:wonder_framsburg_03 } }
+			}
+			wonder_rhosgobel = {
+				set_variable = { name = special_building value = flag:wonder_rhosgobel }
+				if = { limit = { var:special_building = flag:wonder_rhosgobel } }
+			}
+			wonder_amon_lanc_01 = {
+				set_variable = { name = special_building value = flag:wonder_amon_lanc_01 }
+				if = { limit = { var:special_building = flag:wonder_amon_lanc_01 } }
+			}
+			wonder_amon_lanc_02 = {
+				set_variable = { name = special_building value = flag:wonder_amon_lanc_02 }
+				if = { limit = { var:special_building = flag:wonder_amon_lanc_02 } }
+			}
+			wonder_amon_lanc_03 = {
+				set_variable = { name = special_building value = flag:wonder_amon_lanc_03 }
+				if = { limit = { var:special_building = flag:wonder_amon_lanc_03 } }
+			}
+			wonder_amarthrynd_01 = {
+				set_variable = { name = special_building value = flag:wonder_amarthrynd_01 }
+				if = { limit = { var:special_building = flag:wonder_amarthrynd_01 } }
+			}
+			wonder_amarthrynd_02 = {
+				set_variable = { name = special_building value = flag:wonder_amarthrynd_02 }
+				if = { limit = { var:special_building = flag:wonder_amarthrynd_02 } }
+			}
+			wonder_amarthrynd_03 = {
+				set_variable = { name = special_building value = flag:wonder_amarthrynd_03 }
+				if = { limit = { var:special_building = flag:wonder_amarthrynd_03 } }
+			}
+			wonder_aradhrynd = {
+				set_variable = { name = special_building value = flag:wonder_aradhrynd }
+				if = { limit = { var:special_building = flag:wonder_aradhrynd } }
+			}
+			wonder_caras_galadhon = {
+				set_variable = { name = special_building value = flag:wonder_caras_galadhon }
+				if = { limit = { var:special_building = flag:wonder_caras_galadhon } }
+			}
+			wonder_esgaroth = {
+				set_variable = { name = special_building value = flag:wonder_esgaroth }
+				if = { limit = { var:special_building = flag:wonder_esgaroth } }
+			}
+			wonder_high_hall_alcisbaurg = {
+				set_variable = { name = special_building value = flag:wonder_high_hall_alcisbaurg }
+				if = { limit = { var:special_building = flag:wonder_high_hall_alcisbaurg } }
+			}
+			wonder_market_of_dale = {
+				set_variable = { name = special_building value = flag:wonder_market_of_dale }
+				if = { limit = { var:special_building = flag:wonder_market_of_dale } }
+			}
+			wonder_szrel_kain = {
+				set_variable = { name = special_building value = flag:wonder_szrel_kain }
+				if = { limit = { var:special_building = flag:wonder_szrel_kain } }
+			}
+			wonder_mistrand_01 = {
+				set_variable = { name = special_building value = flag:wonder_mistrand_01 }
+				if = { limit = { var:special_building = flag:wonder_mistrand_01 } }
+			}
+			wonder_mistrand_02 = {
+				set_variable = { name = special_building value = flag:wonder_mistrand_02 }
+				if = { limit = { var:special_building = flag:wonder_mistrand_02 } }
+			}
+			wonder_mistrand_03 = {
+				set_variable = { name = special_building value = flag:wonder_mistrand_03 }
+				if = { limit = { var:special_building = flag:wonder_mistrand_03 } }
+			}
+			wonder_quartz_hall = {
+				set_variable = { name = special_building value = flag:wonder_quartz_hall }
+				if = { limit = { var:special_building = flag:wonder_quartz_hall } }
+			}
+			wonder_gundabad_01 = {
+				set_variable = { name = special_building value = flag:wonder_gundabad_01 }
+				if = { limit = { var:special_building = flag:wonder_gundabad_01 } }
+			}
+			wonder_gundabad_02 = {
+				set_variable = { name = special_building value = flag:wonder_gundabad_02 }
+				if = { limit = { var:special_building = flag:wonder_gundabad_02 } }
+			}
+			wonder_temple_sulereb_01 = {
+				set_variable = { name = special_building value = flag:wonder_temple_sulereb_01 }
+				if = { limit = { var:special_building = flag:wonder_temple_sulereb_01 } }
+			}
+			wonder_temple_sulereb_02 = {
+				set_variable = { name = special_building value = flag:wonder_temple_sulereb_02 }
+				if = { limit = { var:special_building = flag:wonder_temple_sulereb_02 } }
+			}
+			wonder_temple_sulereb_03 = {
+				set_variable = { name = special_building value = flag:wonder_temple_sulereb_03 }
+				if = { limit = { var:special_building = flag:wonder_temple_sulereb_03 } }
+			}
+
+
+			### mines?
+
+			rammelsberg_mines_01 = {
+				set_variable = { name = special_building value = flag:rammelsberg_mines_01 }
+				if = { limit = { var:special_building = flag:rammelsberg_mines_01 } }
+			}
+			rammelsberg_mines_02 = {
+				set_variable = { name = special_building value = flag:rammelsberg_mines_02 }
+				if = { limit = { var:special_building = flag:rammelsberg_mines_02 } }
+			}
+			rammelsberg_mines_03 = {
+				set_variable = { name = special_building value = flag:rammelsberg_mines_03 }
+				if = { limit = { var:special_building = flag:rammelsberg_mines_03 } }
+			}
+			rammelsberg_mines_04 = {
+				set_variable = { name = special_building value = flag:rammelsberg_mines_04 }
+				if = { limit = { var:special_building = flag:rammelsberg_mines_04 } }
+			}
+			kutna_hora_mines_01 = {
+				set_variable = { name = special_building value = flag:kutna_hora_mines_01 }
+				if = { limit = { var:special_building = flag:kutna_hora_mines_01 } }
+			}
+			kutna_hora_mines_02 = {
+				set_variable = { name = special_building value = flag:kutna_hora_mines_02 }
+				if = { limit = { var:special_building = flag:kutna_hora_mines_02 } }
+			}
+			kutna_hora_mines_03 = {
+				set_variable = { name = special_building value = flag:kutna_hora_mines_03 }
+				if = { limit = { var:special_building = flag:kutna_hora_mines_03 } }
+			}
+			kutna_hora_mines_04 = {
+				set_variable = { name = special_building value = flag:kutna_hora_mines_04 }
+				if = { limit = { var:special_building = flag:kutna_hora_mines_04 } }
+			}
+			kremnica_mines_01 = {
+				set_variable = { name = special_building value = flag:kremnica_mines_01 }
+				if = { limit = { var:special_building = flag:kremnica_mines_01 } }
+			}
+			kremnica_mines_02 = {
+				set_variable = { name = special_building value = flag:kremnica_mines_02 }
+				if = { limit = { var:special_building = flag:kremnica_mines_02 } }
+			}
+			kremnica_mines_03 = {
+				set_variable = { name = special_building value = flag:kremnica_mines_03 }
+				if = { limit = { var:special_building = flag:kremnica_mines_03 } }
+			}
+			kremnica_mines_04 = {
+				set_variable = { name = special_building value = flag:kremnica_mines_04 }
+				if = { limit = { var:special_building = flag:kremnica_mines_04 } }
+			}
+			falun_mines_01 = {
+				set_variable = { name = special_building value = flag:falun_mines_01 }
+				if = { limit = { var:special_building = flag:falun_mines_01 } }
+			}
+			falun_mines_02 = {
+				set_variable = { name = special_building value = flag:falun_mines_02 }
+				if = { limit = { var:special_building = flag:falun_mines_02 } }
+			}
+			falun_mines_03 = {
+				set_variable = { name = special_building value = flag:falun_mines_03 }
+				if = { limit = { var:special_building = flag:falun_mines_03 } }
+			}
+			falun_mines_04 = {
+				set_variable = { name = special_building value = flag:falun_mines_04 }
+				if = { limit = { var:special_building = flag:falun_mines_04 } }
+			}
+			schwaz_mines_01 = {
+				set_variable = { name = special_building value = flag:schwaz_mines_01 }
+				if = { limit = { var:special_building = flag:schwaz_mines_01 } }
+			}
+			schwaz_mines_02 = {
+				set_variable = { name = special_building value = flag:schwaz_mines_02 }
+				if = { limit = { var:special_building = flag:schwaz_mines_02 } }
+			}
+			schwaz_mines_03 = {
+				set_variable = { name = special_building value = flag:schwaz_mines_03 }
+				if = { limit = { var:special_building = flag:schwaz_mines_03 } }
+			}
+			schwaz_mines_04 = {
+				set_variable = { name = special_building value = flag:schwaz_mines_04 }
+				if = { limit = { var:special_building = flag:schwaz_mines_04 } }
+			}
+			argentiera_mines_01 = {
+				set_variable = { name = special_building value = flag:argentiera_mines_01 }
+				if = { limit = { var:special_building = flag:argentiera_mines_01 } }
+			}
+			argentiera_mines_02 = {
+				set_variable = { name = special_building value = flag:argentiera_mines_02 }
+				if = { limit = { var:special_building = flag:argentiera_mines_02 } }
+			}
+			argentiera_mines_03 = {
+				set_variable = { name = special_building value = flag:argentiera_mines_03 }
+				if = { limit = { var:special_building = flag:argentiera_mines_03 } }
+			}
+			argentiera_mines_04 = {
+				set_variable = { name = special_building value = flag:argentiera_mines_04 }
+				if = { limit = { var:special_building = flag:argentiera_mines_04 } }
+			}
+			kollur_mines_01 = {
+				set_variable = { name = special_building value = flag:kollur_mines_01 }
+				if = { limit = { var:special_building = flag:kollur_mines_01 } }
+			}
+			kollur_mines_02 = {
+				set_variable = { name = special_building value = flag:kollur_mines_02 }
+				if = { limit = { var:special_building = flag:kollur_mines_02 } }
+			}
+			kollur_mines_03 = {
+				set_variable = { name = special_building value = flag:kollur_mines_03 }
+				if = { limit = { var:special_building = flag:kollur_mines_03 } }
+			}
+			kollur_mines_04 = {
+				set_variable = { name = special_building value = flag:kollur_mines_04 }
+				if = { limit = { var:special_building = flag:kollur_mines_04 } }
+			}
+			siderokausia_mines_01 = {
+				set_variable = { name = special_building value = flag:siderokausia_mines_01 }
+				if = { limit = { var:special_building = flag:siderokausia_mines_01 } }
+			}
+			siderokausia_mines_02 = {
+				set_variable = { name = special_building value = flag:siderokausia_mines_02 }
+				if = { limit = { var:special_building = flag:siderokausia_mines_02 } }
+			}
+			siderokausia_mines_03 = {
+				set_variable = { name = special_building value = flag:siderokausia_mines_03 }
+				if = { limit = { var:special_building = flag:siderokausia_mines_03 } }
+			}
+			siderokausia_mines_04 = {
+				set_variable = { name = special_building value = flag:siderokausia_mines_04 }
+				if = { limit = { var:special_building = flag:siderokausia_mines_04 } }
+			}
+			mali_mines_01 = {
+				set_variable = { name = special_building value = flag:mali_mines_01 }
+				if = { limit = { var:special_building = flag:mali_mines_01 } }
+			}
+			mali_mines_02 = {
+				set_variable = { name = special_building value = flag:mali_mines_02 }
+				if = { limit = { var:special_building = flag:mali_mines_02 } }
+			}
+			mali_mines_03 = {
+				set_variable = { name = special_building value = flag:mali_mines_03 }
+				if = { limit = { var:special_building = flag:mali_mines_03 } }
+			}
+			mali_mines_04 = {
+				set_variable = { name = special_building value = flag:mali_mines_04 }
+				if = { limit = { var:special_building = flag:mali_mines_04 } }
+			}
+			konasamudram_mines_01 = {
+				set_variable = { name = special_building value = flag:konasamudram_mines_01 }
+				if = { limit = { var:special_building = flag:konasamudram_mines_01 } }
+			}
+			konasamudram_mines_02 = {
+				set_variable = { name = special_building value = flag:konasamudram_mines_02 }
+				if = { limit = { var:special_building = flag:konasamudram_mines_02 } }
+			}
+			konasamudram_mines_03 = {
+				set_variable = { name = special_building value = flag:konasamudram_mines_03 }
+				if = { limit = { var:special_building = flag:konasamudram_mines_03 } }
+			}
+			konasamudram_mines_04 = {
+				set_variable = { name = special_building value = flag:konasamudram_mines_04 }
+				if = { limit = { var:special_building = flag:konasamudram_mines_04 } }
+			}
+			dean_mines_01 = {
+				set_variable = { name = special_building value = flag:dean_mines_01 }
+				if = { limit = { var:special_building = flag:dean_mines_01 } }
+			}
+			dean_mines_02 = {
+				set_variable = { name = special_building value = flag:dean_mines_02 }
+				if = { limit = { var:special_building = flag:dean_mines_02 } }
+			}
+			dean_mines_03 = {
+				set_variable = { name = special_building value = flag:dean_mines_03 }
+				if = { limit = { var:special_building = flag:dean_mines_03 } }
+			}
+			dean_mines_04 = {
+				set_variable = { name = special_building value = flag:dean_mines_04 }
+				if = { limit = { var:special_building = flag:dean_mines_04 } }
+			}
+			zawar_mines_01 = {
+				set_variable = { name = special_building value = flag:zawar_mines_01 }
+				if = { limit = { var:special_building = flag:zawar_mines_01 } }
+			}
+			zawar_mines_02 = {
+				set_variable = { name = special_building value = flag:zawar_mines_02 }
+				if = { limit = { var:special_building = flag:zawar_mines_02 } }
+			}
+			zawar_mines_03 = {
+				set_variable = { name = special_building value = flag:zawar_mines_03 }
+				if = { limit = { var:special_building = flag:zawar_mines_03 } }
+			}
+			zawar_mines_04 = {
+				set_variable = { name = special_building value = flag:zawar_mines_04 }
+				if = { limit = { var:special_building = flag:zawar_mines_04 } }
+			}
+			takkeda_mines_01 = {
+				set_variable = { name = special_building value = flag:takkeda_mines_01 }
+				if = { limit = { var:special_building = flag:takkeda_mines_01 } }
+			}
+			takkeda_mines_02 = {
+				set_variable = { name = special_building value = flag:takkeda_mines_02 }
+				if = { limit = { var:special_building = flag:takkeda_mines_02 } }
+			}
+			takkeda_mines_03 = {
+				set_variable = { name = special_building value = flag:takkeda_mines_03 }
+				if = { limit = { var:special_building = flag:takkeda_mines_03 } }
+			}
+			takkeda_mines_04 = {
+				set_variable = { name = special_building value = flag:takkeda_mines_04 }
+				if = { limit = { var:special_building = flag:takkeda_mines_04 } }
+			}
+			khetri_mines_01 = {
+				set_variable = { name = special_building value = flag:khetri_mines_01 }
+				if = { limit = { var:special_building = flag:khetri_mines_01 } }
+			}
+			khetri_mines_02 = {
+				set_variable = { name = special_building value = flag:khetri_mines_02 }
+				if = { limit = { var:special_building = flag:khetri_mines_02 } }
+			}
+			khetri_mines_03 = {
+				set_variable = { name = special_building value = flag:khetri_mines_03 }
+				if = { limit = { var:special_building = flag:khetri_mines_03 } }
+			}
+			khetri_mines_04 = {
+				set_variable = { name = special_building value = flag:khetri_mines_04 }
+				if = { limit = { var:special_building = flag:khetri_mines_04 } }
+			}
+			taghaza_mines_01 = {
+				set_variable = { name = special_building value = flag:taghaza_mines_01 }
+				if = { limit = { var:special_building = flag:taghaza_mines_01 } }
+			}
+			taghaza_mines_02 = {
+				set_variable = { name = special_building value = flag:taghaza_mines_02 }
+				if = { limit = { var:special_building = flag:taghaza_mines_02 } }
+			}
+			taghaza_mines_03 = {
+				set_variable = { name = special_building value = flag:taghaza_mines_03 }
+				if = { limit = { var:special_building = flag:taghaza_mines_03 } }
+			}
+			taghaza_mines_04 = {
+				set_variable = { name = special_building value = flag:taghaza_mines_04 }
+				if = { limit = { var:special_building = flag:taghaza_mines_04 } }
+			}
+			ijil_mines_01 = {
+				set_variable = { name = special_building value = flag:ijil_mines_01 }
+				if = { limit = { var:special_building = flag:ijil_mines_01 } }
+			}
+			ijil_mines_02 = {
+				set_variable = { name = special_building value = flag:ijil_mines_02 }
+				if = { limit = { var:special_building = flag:ijil_mines_02 } }
+			}
+			ijil_mines_03 = {
+				set_variable = { name = special_building value = flag:ijil_mines_03 }
+				if = { limit = { var:special_building = flag:ijil_mines_03 } }
+			}
+			ijil_mines_04 = {
+				set_variable = { name = special_building value = flag:ijil_mines_04 }
+				if = { limit = { var:special_building = flag:ijil_mines_04 } }
+			}
+			turda_mines_01 = {
+				set_variable = { name = special_building value = flag:turda_mines_01 }
+				if = { limit = { var:special_building = flag:turda_mines_01 } }
+			}
+			turda_mines_02 = {
+				set_variable = { name = special_building value = flag:turda_mines_02 }
+				if = { limit = { var:special_building = flag:turda_mines_02 } }
+			}
+			turda_mines_03 = {
+				set_variable = { name = special_building value = flag:turda_mines_03 }
+				if = { limit = { var:special_building = flag:turda_mines_03 } }
+			}
+			turda_mines_04 = {
+				set_variable = { name = special_building value = flag:turda_mines_04 }
+				if = { limit = { var:special_building = flag:turda_mines_04 } }
+			}
+			phocaea_mines_01 = {
+				set_variable = { name = special_building value = flag:phocaea_mines_01 }
+				if = { limit = { var:special_building = flag:phocaea_mines_01 } }
+			}
+			phocaea_mines_02 = {
+				set_variable = { name = special_building value = flag:phocaea_mines_02 }
+				if = { limit = { var:special_building = flag:phocaea_mines_02 } }
+			}
+			phocaea_mines_03 = {
+				set_variable = { name = special_building value = flag:phocaea_mines_03 }
+				if = { limit = { var:special_building = flag:phocaea_mines_03 } }
+			}
+			phocaea_mines_04 = {
+				set_variable = { name = special_building value = flag:phocaea_mines_04 }
+				if = { limit = { var:special_building = flag:phocaea_mines_04 } }
+			}
+			pansjhir_mines_01 = {
+				set_variable = { name = special_building value = flag:pansjhir_mines_01 }
+				if = { limit = { var:special_building = flag:pansjhir_mines_01 } }
+			}
+			pansjhir_mines_02 = {
+				set_variable = { name = special_building value = flag:pansjhir_mines_02 }
+				if = { limit = { var:special_building = flag:pansjhir_mines_02 } }
+			}
+			pansjhir_mines_03 = {
+				set_variable = { name = special_building value = flag:pansjhir_mines_03 }
+				if = { limit = { var:special_building = flag:pansjhir_mines_03 } }
+			}
+			pansjhir_mines_04 = {
+				set_variable = { name = special_building value = flag:pansjhir_mines_04 }
+				if = { limit = { var:special_building = flag:pansjhir_mines_04 } }
+			}
+			trepca_mines_01 = {
+				set_variable = { name = special_building value = flag:trepca_mines_01 }
+				if = { limit = { var:special_building = flag:trepca_mines_01 } }
+			}
+			trepca_mines_02 = {
+				set_variable = { name = special_building value = flag:trepca_mines_02 }
+				if = { limit = { var:special_building = flag:trepca_mines_02 } }
+			}
+			trepca_mines_03 = {
+				set_variable = { name = special_building value = flag:trepca_mines_03 }
+				if = { limit = { var:special_building = flag:trepca_mines_03 } }
+			}
+			trepca_mines_04 = {
+				set_variable = { name = special_building value = flag:trepca_mines_04 }
+				if = { limit = { var:special_building = flag:trepca_mines_04 } }
+			}
+			rudnik_mines_01 = {
+				set_variable = { name = special_building value = flag:rudnik_mines_01 }
+				if = { limit = { var:special_building = flag:rudnik_mines_01 } }
+			}
+			rudnik_mines_02 = {
+				set_variable = { name = special_building value = flag:rudnik_mines_02 }
+				if = { limit = { var:special_building = flag:rudnik_mines_02 } }
+			}
+			rudnik_mines_03 = {
+				set_variable = { name = special_building value = flag:rudnik_mines_03 }
+				if = { limit = { var:special_building = flag:rudnik_mines_03 } }
+			}
+			rudnik_mines_04 = {
+				set_variable = { name = special_building value = flag:rudnik_mines_04 }
+				if = { limit = { var:special_building = flag:rudnik_mines_04 } }
+			}
+			cevennes_mines_01 = {
+				set_variable = { name = special_building value = flag:cevennes_mines_01 }
+				if = { limit = { var:special_building = flag:cevennes_mines_01 } }
+			}
+			cevennes_mines_02 = {
+				set_variable = { name = special_building value = flag:cevennes_mines_02 }
+				if = { limit = { var:special_building = flag:cevennes_mines_02 } }
+			}
+			cevennes_mines_03 = {
+				set_variable = { name = special_building value = flag:cevennes_mines_03 }
+				if = { limit = { var:special_building = flag:cevennes_mines_03 } }
+			}
+			cevennes_mines_04 = {
+				set_variable = { name = special_building value = flag:cevennes_mines_04 }
+				if = { limit = { var:special_building = flag:cevennes_mines_04 } }
+			}
+			allaq_mines_01 = {
+				set_variable = { name = special_building value = flag:allaq_mines_01 }
+				if = { limit = { var:special_building = flag:allaq_mines_01 } }
+			}
+			allaq_mines_02 = {
+				set_variable = { name = special_building value = flag:allaq_mines_02 }
+				if = { limit = { var:special_building = flag:allaq_mines_02 } }
+			}
+			allaq_mines_03 = {
+				set_variable = { name = special_building value = flag:allaq_mines_03 }
+				if = { limit = { var:special_building = flag:allaq_mines_03 } }
+			}
+			allaq_mines_04 = {
+				set_variable = { name = special_building value = flag:allaq_mines_04 }
+				if = { limit = { var:special_building = flag:allaq_mines_04 } }
+			}
+			verespatak_mines_01 = {
+				set_variable = { name = special_building value = flag:verespatak_mines_01 }
+				if = { limit = { var:special_building = flag:verespatak_mines_01 } }
+			}
+			verespatak_mines_02 = {
+				set_variable = { name = special_building value = flag:verespatak_mines_02 }
+				if = { limit = { var:special_building = flag:verespatak_mines_02 } }
+			}
+			verespatak_mines_03 = {
+				set_variable = { name = special_building value = flag:verespatak_mines_03 }
+				if = { limit = { var:special_building = flag:verespatak_mines_03 } }
+			}
+			verespatak_mines_04 = {
+				set_variable = { name = special_building value = flag:verespatak_mines_04 }
+				if = { limit = { var:special_building = flag:verespatak_mines_04 } }
+			}
+			nishapur_mines_01 = {
+				set_variable = { name = special_building value = flag:nishapur_mines_01 }
+				if = { limit = { var:special_building = flag:nishapur_mines_01 } }
+			}
+			nishapur_mines_02 = {
+				set_variable = { name = special_building value = flag:nishapur_mines_02 }
+				if = { limit = { var:special_building = flag:nishapur_mines_02 } }
+			}
+			nishapur_mines_03 = {
+				set_variable = { name = special_building value = flag:nishapur_mines_03 }
+				if = { limit = { var:special_building = flag:nishapur_mines_03 } }
+			}
+			nishapur_mines_04 = {
+				set_variable = { name = special_building value = flag:nishapur_mines_04 }
+				if = { limit = { var:special_building = flag:nishapur_mines_04 } }
+			}
+			srebrenica_mines_01 = {
+				set_variable = { name = special_building value = flag:srebrenica_mines_01 }
+				if = { limit = { var:special_building = flag:srebrenica_mines_01 } }
+			}
+			srebrenica_mines_02 = {
+				set_variable = { name = special_building value = flag:srebrenica_mines_02 }
+				if = { limit = { var:special_building = flag:srebrenica_mines_02 } }
+			}
+			srebrenica_mines_03 = {
+				set_variable = { name = special_building value = flag:srebrenica_mines_03 }
+				if = { limit = { var:special_building = flag:srebrenica_mines_03 } }
+			}
+			srebrenica_mines_04 = {
+				set_variable = { name = special_building value = flag:srebrenica_mines_04 }
+				if = { limit = { var:special_building = flag:srebrenica_mines_04 } }
+			}
+			ratnapura_mines_01 = {
+				set_variable = { name = special_building value = flag:ratnapura_mines_01 }
+				if = { limit = { var:special_building = flag:ratnapura_mines_01 } }
+			}
+			ratnapura_mines_02 = {
+				set_variable = { name = special_building value = flag:ratnapura_mines_02 }
+				if = { limit = { var:special_building = flag:ratnapura_mines_02 } }
+			}
+			ratnapura_mines_03 = {
+				set_variable = { name = special_building value = flag:ratnapura_mines_03 }
+				if = { limit = { var:special_building = flag:ratnapura_mines_03 } }
+			}
+			ratnapura_mines_04 = {
+				set_variable = { name = special_building value = flag:ratnapura_mines_04 }
+				if = { limit = { var:special_building = flag:ratnapura_mines_04 } }
+			}
+			sar_i_sang_mines_01 = {
+				set_variable = { name = special_building value = flag:sar_i_sang_mines_01 }
+				if = { limit = { var:special_building = flag:sar_i_sang_mines_01 } }
+			}
+			sar_i_sang_mines_02 = {
+				set_variable = { name = special_building value = flag:sar_i_sang_mines_02 }
+				if = { limit = { var:special_building = flag:sar_i_sang_mines_02 } }
+			}
+			sar_i_sang_mines_03 = {
+				set_variable = { name = special_building value = flag:sar_i_sang_mines_03 }
+				if = { limit = { var:special_building = flag:sar_i_sang_mines_03 } }
+			}
+			sar_i_sang_mines_04 = {
+				set_variable = { name = special_building value = flag:sar_i_sang_mines_04 }
+				if = { limit = { var:special_building = flag:sar_i_sang_mines_04 } }
+			}
+
+		}
+	}
+
+	if = {
+		limit = { NOT = { has_variable = duchy_building_ledger } }
+
+
+	}
+}

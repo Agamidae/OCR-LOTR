@@ -1,0 +1,9 @@
+template datacontext_marriage_default {
+  datacontext = "[CharacterSelectionList.GetFilterWithDefault('fertility_filter', FixedPointToInt(GetPlayer.MakeScope.ScriptValue('is_elf_bool')))]"
+}
+template locr_matri_toggle {
+  visible = "[EqualTo_string(MatchmakerInteractionWindow.GetCharacterInteractionConfirmationWindow.GetSendName,Localize('marry_off_send'))]"
+}
+template NO_CHARACTERS_TO_SELECT {
+	text = "NO_CHARACTERS_TO_SELECT_MARRIAGE"
+}

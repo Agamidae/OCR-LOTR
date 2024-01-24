@@ -1,0 +1,205 @@
+types OCR {
+  type locr_colonize_wasteland = button_primary_text {
+    layoutpolicy_horizontal = expanding
+    name = "construct_holding_wastelands"
+    datacontext = "[HoldingView.GetTitle]"
+    visible = "[GetScriptedGui('gui_is_province_wastelands').IsShown( GuiScope.SetRoot( HoldingView.GetProvince.MakeScope ).End)]"
+    blockoverride "text" {
+      text = "[Localize('COLONISE')] [HoldingView.GetProvince.GetCounty.GetTitle.GetNameNoTierNoTooltip]"
+    }
+    blockoverride "disabled" {
+      visible = "[Not(GetScriptedGui('gui_can_colonise').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('wastelands', HoldingView.GetProvince.MakeScope ).End))]"
+    }
+
+    onclick = "[GetScriptedGui('gui_can_colonise').Execute( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('wastelands', HoldingView.GetProvince.MakeScope ).End)]"
+    tooltip = "colonise_land_desc"
+    enabled = "[GetScriptedGui('gui_can_colonise').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).AddScope('wastelands', HoldingView.GetProvince.MakeScope ).End)]"
+  }
+
+  type flow_locr_feudalize_buttons = flowcontainer {
+    ignoreinvisible = yes
+    direction = vertical
+
+    ### FEUDALIZE INTO CASTLE HOLDING ###
+    button_text = {
+      blockoverride "text" {
+        raw_text = "[Character.GetPlayerInteractionWithTargetTitleName('feudalize_into_castle_holding_interaction', Title.Self)]"
+      }
+      blockoverride "disabled" {
+        visible = "[Not(Character.IsPlayerInteractionWithTargetTitleValid('feudalize_into_castle_holding_interaction', Title.Self))]"
+      }
+      datacontext = "[HoldingView.GetGUIHoldingBuilding]"
+      datacontext = "[HoldingView.GetTitle]"
+      datacontext = "[HoldingView.GetHolder]"
+      visible = "[And( Character.IsLocalPlayer, Character.IsPlayerInteractionShownAndCanPickTitle('feudalize_into_castle_holding_interaction', Title.Self) )]"
+      enabled = "[Character.IsPlayerInteractionWithTargetTitleValid('feudalize_into_castle_holding_interaction', Title.Self)]"
+      tooltip = "[Character.GetPlayerInteractionWithTargetTitleTooltip('feudalize_into_castle_holding_interaction', Title.Self)]"
+      oversound = "event:/SFX/UI/Generic/sfx_ui_generic_pointer_over"
+      clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_select"
+      onclick = "[Character.OpenPlayerInteractionWithTargetTitle('feudalize_into_castle_holding_interaction', Title.Self)]"
+    }
+
+    ### FEUDALIZE INTO CITY HOLDING ###
+    button_text = {
+      blockoverride "text" {
+        raw_text = "[Character.GetPlayerInteractionWithTargetTitleName('feudalize_into_city_holding_interaction', Title.Self)]"
+      }
+      blockoverride "disabled" {
+        visible = "[Not(Character.IsPlayerInteractionWithTargetTitleValid('feudalize_into_city_holding_interaction', Title.Self))]"
+      }
+      datacontext = "[HoldingView.GetGUIHoldingBuilding]"
+      datacontext = "[HoldingView.GetTitle]"
+      datacontext = "[HoldingView.GetHolder]"
+      visible = "[And( Character.IsLocalPlayer, Character.IsPlayerInteractionShownAndCanPickTitle('feudalize_into_city_holding_interaction', Title.Self) )]"
+      enabled = "[Character.IsPlayerInteractionWithTargetTitleValid('feudalize_into_city_holding_interaction', Title.Self)]"
+      tooltip = "[Character.GetPlayerInteractionWithTargetTitleTooltip('feudalize_into_city_holding_interaction', Title.Self)]"
+      oversound = "event:/SFX/UI/Generic/sfx_ui_generic_pointer_over"
+      clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_select"
+      onclick = "[Character.OpenPlayerInteractionWithTargetTitle('feudalize_into_city_holding_interaction', Title.Self)]"
+    }
+
+    ### FEUDALIZE INTO TEMPLE HOLDING ###
+    button_text = {
+      blockoverride "text" {
+        raw_text = "[Character.GetPlayerInteractionWithTargetTitleName('feudalize_into_temple_holding_interaction', Title.Self)]"
+      }
+      blockoverride "disabled" {
+        visible = "[Not(Character.IsPlayerInteractionWithTargetTitleValid('feudalize_into_temple_holding_interaction', Title.Self))]"
+      }
+      datacontext = "[HoldingView.GetGUIHoldingBuilding]"
+      datacontext = "[HoldingView.GetTitle]"
+      datacontext = "[HoldingView.GetHolder]"
+      visible = "[And( Character.IsLocalPlayer, Character.IsPlayerInteractionShownAndCanPickTitle('feudalize_into_temple_holding_interaction', Title.Self) )]"
+      enabled = "[Character.IsPlayerInteractionWithTargetTitleValid('feudalize_into_temple_holding_interaction', Title.Self)]"
+      tooltip = "[Character.GetPlayerInteractionWithTargetTitleTooltip('feudalize_into_temple_holding_interaction', Title.Self)]"
+      oversound = "event:/SFX/UI/Generic/sfx_ui_generic_pointer_over"
+      clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_select"
+      onclick = "[Character.OpenPlayerInteractionWithTargetTitle('feudalize_into_temple_holding_interaction', Title.Self)]"
+    }
+
+    ### RETURN SETTLEMENT BACK TO WILDERNESS ###
+    button_text = {
+      blockoverride "text" {
+        raw_text = "[Character.GetPlayerInteractionWithTargetTitleName('return_settlement_county_to_wilderness', Title.Self)]"
+      }
+      blockoverride "disabled" {
+        visible = "[Not(Character.IsPlayerInteractionWithTargetTitleValid('return_settlement_county_to_wilderness', Title.Self))]"
+      }
+      datacontext = "[HoldingView.GetGUIHoldingBuilding]"
+      datacontext = "[HoldingView.GetTitle]"
+      datacontext = "[HoldingView.GetHolder]"
+      visible = "[And( Character.IsLocalPlayer, Character.IsPlayerInteractionShownAndCanPickTitle('return_settlement_county_to_wilderness', Title.Self) )]"
+      enabled = "[Character.IsPlayerInteractionWithTargetTitleValid('return_settlement_county_to_wilderness', Title.Self)]"
+      tooltip = "[Character.GetPlayerInteractionWithTargetTitleTooltip('return_settlement_county_to_wilderness', Title.Self)]"
+      oversound = "event:/SFX/UI/Generic/sfx_ui_generic_pointer_over"
+      clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_select"
+      onclick = "[Character.OpenPlayerInteractionWithTargetTitle('return_settlement_county_to_wilderness', Title.Self)]"
+    }
+
+    ### SETTLE AN ELVEN HOLDING ###
+    button_text = {
+      blockoverride "text" {
+        raw_text = "[Character.GetPlayerInteractionWithTargetTitleName('settle_elven_holding_interaction', Title.Self)]"
+      }
+      blockoverride "disabled" {
+        visible = "[Not(Character.IsPlayerInteractionWithTargetTitleValid('settle_elven_holding_interaction', Title.Self))]"
+      }
+      datacontext = "[HoldingView.GetGUIHoldingBuilding]"
+      datacontext = "[HoldingView.GetTitle]"
+      datacontext = "[HoldingView.GetHolder]"
+      visible = "[And( Character.IsLocalPlayer, Character.IsPlayerInteractionShownAndCanPickTitle('settle_elven_holding_interaction', Title.Self) )]"
+      enabled = "[Character.IsPlayerInteractionWithTargetTitleValid('settle_elven_holding_interaction', Title.Self)]"
+      tooltip = "[Character.GetPlayerInteractionWithTargetTitleTooltip('settle_elven_holding_interaction', Title.Self)]"
+      oversound = "event:/SFX/UI/Generic/sfx_ui_generic_pointer_over"
+      clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_select"
+      onclick = "[Character.OpenPlayerInteractionWithTargetTitle('settle_elven_holding_interaction', Title.Self)]"
+    }
+
+    ### TRIBALIZE AN ELVEN HOLDING ###
+    button_text = {
+      blockoverride "text" {
+        raw_text = "[Character.GetPlayerInteractionWithTargetTitleName('tribalize_elven_holding_interaction', Title.Self)]"
+      }
+      blockoverride "disabled" {
+        visible = "[Not(Character.IsPlayerInteractionWithTargetTitleValid('tribalize_elven_holding_interaction', Title.Self))]"
+      }
+      datacontext = "[HoldingView.GetGUIHoldingBuilding]"
+      datacontext = "[HoldingView.GetTitle]"
+      datacontext = "[HoldingView.GetHolder]"
+      visible = "[And( Character.IsLocalPlayer, Character.IsPlayerInteractionShownAndCanPickTitle('tribalize_elven_holding_interaction', Title.Self) )]"
+      enabled = "[Character.IsPlayerInteractionWithTargetTitleValid('tribalize_elven_holding_interaction', Title.Self)]"
+      tooltip = "[Character.GetPlayerInteractionWithTargetTitleTooltip('tribalize_elven_holding_interaction', Title.Self)]"
+      oversound = "event:/SFX/UI/Generic/sfx_ui_generic_pointer_over"
+      clicksound = "event:/SFX/UI/Generic/sfx_ui_generic_select"
+      onclick = "[Character.OpenPlayerInteractionWithTargetTitle('tribalize_elven_holding_interaction', Title.Self)]"
+    }
+  }
+  type text_wasteland_locr = text_single {
+    raw_text = "wasteland"
+    using = its_wasteland_locr
+    datacontext = "[Title.GetHolder]"
+  }
+
+  type button_locr_road = button_text {
+    layoutpolicy_horizontal = expanding
+    shortcut = map_mode_8
+    onclick = "[Set('county_tabs', 'road')]"
+    onclick = "[ClickAdd('locr_road', HoldingView.GetProvince, GetPlayer)]"
+    visible = "[ShowAdd('locr_road', HoldingView.GetProvince, GetPlayer)]"
+    blockoverride "text" {
+      raw_text = "Lies on the Rhun Road, increasing tax. Show the road, Control E."
+    }
+  }
+  type vbox_locr_rhun_road = vbox {
+    layoutpolicy_horizontal = expanding
+    visible = "[Has('county_tabs', 'road')]"
+
+    button_text = {
+      layoutpolicy_horizontal = expanding
+      shortcut = character_finder
+      onclick = "[Click('road_counties')]"
+      onclick = "[ClickAdd('locr_road', HoldingView.GetProvince, GetPlayer)]"
+      blockoverride "text" {
+        raw_text = "Rhun Road,"
+      }
+      blockoverride "extra" {
+        text_single = {
+          visible = "[Not(GetPlayer.MakeScope.Var('road_counties').IsSet)]"
+          raw_text = "[GetDataModelSize(GetGlobalList('rhun_road'))] provinces, group by counties, C."
+        }
+        text_single = {
+          visible = "[GetPlayer.MakeScope.Var('road_counties').IsSet]"
+          raw_text = "[GetDataModelSize(HoldingView.GetProvince.MakeScope.GetList('rhun_road_counties'))] counties. Ungroup, C."
+        }
+      }
+    }
+
+
+    vbox = {
+      layoutpolicy_horizontal = expanding
+      visible = "[Not(GetPlayer.MakeScope.Var('road_counties').IsSet)]"
+      datamodel = "[HoldingView.GetProvince.MakeScope.GetList('rhun_road')]"
+
+      item = {
+        button_holding = {
+          layoutpolicy_horizontal = expanding
+        }
+      }
+    }
+
+    vbox = {
+      layoutpolicy_horizontal = expanding
+      visible = "[GetPlayer.MakeScope.Var('road_counties').IsSet]"
+      datamodel = "[HoldingView.GetProvince.MakeScope.GetList('rhun_road_counties')]"
+
+      item = {
+        adjacent_county_button = {
+          blockoverride "county_distance" {
+
+          }
+          layoutpolicy_horizontal = expanding
+        }
+      }
+    }
+  }
+}

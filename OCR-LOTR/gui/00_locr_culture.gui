@@ -1,0 +1,25 @@
+types OCR {
+  type vbox_locr_culture_desc = vbox {
+    layoutpolicy_horizontal = expanding
+    visible = "[GetScriptedGui('culture_descriptions').IsShown(GuiScope.SetRoot(Culture.MakeScope).End)]"
+    button_text = {
+      layoutpolicy_horizontal = expanding
+      onclick = "[Toggle('culture_desc')]"
+      shortcut = map_mode_1
+      blockoverride "text" {
+        raw_text = "Culture description, [CollapseIf(Isnt('culture_desc'))] E."
+      }
+    }
+
+    hbox = {
+      layoutpolicy_horizontal = expanding
+      visible = "[Is('culture_desc')]"
+
+      text_multi_wide = {
+        raw_text = "[GetScriptedGui('culture_descriptions').BuildTooltip(GuiScope.SetRoot(Culture.MakeScope).End)]"
+      }
+
+      expand = {}
+    }
+  }
+}

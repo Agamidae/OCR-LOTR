@@ -1,0 +1,85 @@
+﻿locr_road = {
+  effect = {
+    clear_variable_list = rhun_road
+    clear_variable_list = rhun_road_counties
+    if = {
+      limit = {
+        NOT = {
+          has_global_variable_list = rhun_road
+        }
+      }
+      every_province = {
+        limit = {
+          has_province_modifier = rhun_road_province_modifier
+        }
+        add_to_global_variable_list = {
+          name = rhun_road
+          target = this
+        }
+      }
+    }
+    if = {
+      limit = { exists = scope:target.var:road_counties }
+      ordered_in_global_list = {
+        variable = rhun_road
+        order_by = {
+          value = "squared_distance(root)"
+          multiply = -1
+        }
+        min = 0
+        county = {
+          if = {
+            limit = {
+              root = {
+                NOT = {
+                  is_target_in_variable_list = {
+                    name = rhun_road_counties
+                    target = prev
+                  }
+                }
+              }
+            }
+            root = {
+              add_to_variable_list = {
+                name = rhun_road_counties
+                target = prev
+              }
+            }
+          }
+        }
+      }
+    }
+    else = {
+      ordered_in_global_list = {
+      variable = rhun_road
+      order_by = {
+        value = "squared_distance(root)"
+        multiply = -1
+      }
+      min = 0
+      root = {
+        add_to_variable_list = {
+          name = rhun_road
+          target = prev
+        }
+      }
+    }
+    }
+  }
+  is_shown = {
+    has_province_modifier = rhun_road_province_modifier
+  }
+}
+
+road_counties = {
+  effect = {
+    toggle_var = { VAR = road_counties }
+  }
+}
+
+
+locr_yes = {
+  is_shown = {
+    always = yes
+  }
+}

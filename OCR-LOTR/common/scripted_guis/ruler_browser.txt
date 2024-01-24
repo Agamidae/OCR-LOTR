@@ -1,0 +1,17 @@
+﻿regions = {
+	effect = {
+		set_global_variable = {
+			name = all_playable_rulers
+			value = all_playable_rulers
+		}
+	}
+}
+
+all_rulers = {
+	effect = {
+		set_global_variable = {
+			name = all_landed_rulers
+			value = all_landed_rulers
+		}
+	}
+}
