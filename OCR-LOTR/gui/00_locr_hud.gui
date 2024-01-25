@@ -48,7 +48,7 @@ types OCR {
       blockoverride "extra" {
         comma = {}
         text_single = {
-          raw_text = "[SelectLocalization(GetScriptedGui('can_do_sorcery').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End), 'Y', 'disabled')]."
+          raw_text = "[SelectLocalization(GetScriptedGui('can_do_sorcery').IsValid( GuiScope.SetRoot( GetPlayer.MakeScope ).End), 'ctrl_y', 'disabled')]."
         }
       }
 
